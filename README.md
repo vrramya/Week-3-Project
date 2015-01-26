@@ -1,30 +1,17 @@
-# Getting and Cleaning Data: Course Project
+# Getting and Cleaning Data: Week 3 Course Project
 
-Course Project for Coursera's Getting and Cleaning Data class.
-This set of scripts downloads and tidies data from the UCI Human
-Activity Recognition Using Smartphones Data Set, which contains
-a set of smartphone sensor readings associated with various
-activities such as walking, walking upstairs, walking downstairs,
 etc.
 
 ## Dependencies
 
 This project depends on the reshape2 R package
-
-## Project Scripts
-
-### run_analysis.R
-
-```run_analysis.R``` is the main point of entry. It sources all other
-files in the project, defines the main ```RunAnalysis()``` function, and
-then calls the ```RunAnalysis()``` function.
-
 ### download_data.R
 
 ```RunAnalysis()``` calls ```DownloadData()```, contained in the file
 ```download_data.R```. ```DownloadData()``` checks to see if the original
 data has already been downloaded, and if not, downloads the ZIP file to
 ```./HAR Dataset.zip```, and unzips it to ```./UCI HAR Dataset```.
+
 
 ### merge_data.R
 
@@ -56,6 +43,15 @@ functions.
    e.g. ```tBodyAcc-mean()-X``` becomes ```tbodyaccmeanx```.
 5. Finally, ```MergeData()``` binds the test and train dataset rows together
    and returns the complete, combined dataset.
+
+### run_analysis.R
+
+
+```run_analysis.R``` is the main point of entry. It sources all other
+files in the project, defines the main ```RunAnalysis()``` function, and
+then calls the ```RunAnalysis()``` function.
+
+
 
 ### average_data.R
 
