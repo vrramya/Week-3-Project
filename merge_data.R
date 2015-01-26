@@ -1,5 +1,3 @@
-# Merges the HAR training and test data sets into a single data table
-# Returns the merged data with tidy names and only the mean/std features
 MergeData <- function() {
   # Test files
   x.test.file <- "./UCI HAR Dataset/test/X_test.txt"
@@ -38,11 +36,7 @@ ReadLabels <- function() {
   labels
 }
 
-# Given the features, labels and subjects (in x.file,
-# y.file and subj.file respectively), reads the dataset
-# into a data frame. Takes only the mean() and std()
-# columns. Returns the dataset with only the mean and
-# std columns, and with tidy labels
+
 ReadDataset  <- function(x.file, y.file, subj.file, features, labels) {
   dataset <- read.table(x.file)
   names(dataset) <- features
@@ -52,10 +46,7 @@ ReadDataset  <- function(x.file, y.file, subj.file, features, labels) {
   TidyNames(dataset[grep("mean\\(\\)|std\\(\\)|activity|subject", names(dataset))])
 }
 
-# Tidies the names of the dataset by
-# a. Removing non-alphanumeric characters
-# b. Downcasing
-# Returns the dataset with the tidied names
+
 TidyNames <- function(dataset) {
   names(dataset) <- gsub("[^[:alnum:]]", "", tolower(names(dataset)))
   dataset
