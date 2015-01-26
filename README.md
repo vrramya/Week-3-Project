@@ -1,10 +1,5 @@
 # Getting and Cleaning Data: Week 3 Course Project
 
-etc.
-
-## Dependencies
-
-This project depends on the reshape2 R package
 ### download_data.R
 
 ```RunAnalysis()``` calls ```DownloadData()```, contained in the file
@@ -29,8 +24,7 @@ functions.
 3. ```ReadDataset()```: This is called first with the test dataset, then
    with the train dataset. It takes the X file, containing the sensor
    readings, the y file, containing the activity label for each observation,
-   the subject file, containing the subject identifiers for each observation,
-   the features list from step 1, and the labels table from step 2. It reads
+   the subject file, It reads
    the X file, y file and subject file into data frames. Next, it sets the
    names of the X dataset to the features list, then appends the y file column,
    and the subject file column to the end. It then merges with the labels data
